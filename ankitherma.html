@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankit Herma | Portfolio</title>
+    <style>
+        /* Modern Black & White Theme */
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --text-main: #ffffff;
+            --text-muted: #888888;
+            --border-color: #2a2a2a;
+            --accent: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+            opacity: 0;
+            animation: fadeUp 0.8s ease-out forwards;
+        }
+
+        section:last-child {
+            border-bottom: none;
+            padding-bottom: 100px;
+        }
+
+        /* Staggered Animation Delays */
+        #hero { animation-delay: 0.1s; border-bottom: none; padding-top: 120px; padding-bottom: 40px; }
+        #about { animation-delay: 0.3s; }
+        #experience { animation-delay: 0.5s; }
+        #work { animation-delay: 0.7s; }
+        #services { animation-delay: 0.9s; }
+
+        /* Typography */
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            letter-spacing: -1px;
+        }
+
+        h2.subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin: 0 0 24px 0;
+        }
+
+        h3.section-title {
+            font-size: 1.5rem;
+            margin: 0 0 30px 0;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        h4.category-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin: 30px 0 10px 0;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 16px;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border-color);
+            transition: border-color 0.3s ease;
+        }
+
+        a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        /* Contact Details Grid */
+        .contact-info {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+
+        .contact-item {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Cards for Experience & Work */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 12px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #555;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .card-title {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .card-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .card-subtitle {
+            color: var(--accent);
+            font-size: 0.95rem;
+            margin: 0 0 16px 0;
+            display: block;
+        }
+
+        .card ul {
+            margin: 0;
+            padding-left: 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .card ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Skills Tags */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: var(--text-main);
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background-color: var(--text-main);
+            color: var(--bg-dark);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <section id="hero">
+            <h1>Ankit Herma</h1>
+            <h2 class="subtitle">Front End Developer & UI/UX Designer</h2>
+            <p>
+                Innovative Front End Developer and MCA Graduate with a passion for integrating modern web technologies with AI workflows. I specialize in building responsive, high-performance interfaces using React.js and modern design principles. Seeking to leverage my technical expertise in problem-solving, UI/UX design, and AI tools within a progressive, intelligent automation environment.
+            </p>
+            
+            <div class="contact-info">
+                <span class="contact-item">📍 Rajkot, Gujarat</span>
+                <span class="contact-item">✉️ <a href="mailto:hermaankit@gmail.com">hermaankit@gmail.com</a></span>
+                <span class="contact-item">📞 +91 9687315633</span>
+            </div>
+
+            <h4 class="category-title">Technical Skills</h4>
+            <div class="skills-container">
+                <div class="skill-tag">React.js</div>
+                <div class="skill-tag">JavaScript / TypeScript</div>
+                <div class="skill-tag">HTML & CSS</div>
+                <div class="skill-tag">Tailwind CSS / Bootstrap</div>
+                <div class="skill-tag">WordPress</div>
+                <div class="skill-tag">AI Integration & Prompt Engineering</div>
+                <div class="skill-tag">UI/UX & Figma</div>
+                <div class="skill-tag">REST APIs</div>
+            </div>
+
+            <h4 class="category-title">Soft Skills</h4>
+            <div class="skills-container">
+                <div class="skill-tag">Problem Solving</div>
+                <div class="skill-tag">Team Collaboration</div>
+                <div class="skill-tag">Creative Thinking</div>
+                <div class="skill-tag">Adaptability</div>
+                <div class="skill-tag">Positive Attitude</div>
+            </div>
+
+            <h4 class="category-title">Languages</h4>
+            <div class="skills-container">
+                <div class="skill-tag">English (Full Professional)</div>
+                <div class="skill-tag">Hindi (Full Professional)</div>
+                <div class="skill-tag">Gujarati (Full Professional)</div>
+            </div>
+        </section>
+
+        <section id="services">
+            <h3 class="section-title">Services & Expertise</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h4 class="card-title">Front End & Web Development</h4>
+                    <p style="margin-top: 10px; margin-bottom: 0;">Building fast, accessible, and user-friendly web applications utilizing modern frameworks like React.js and Next.js. Ensuring high performance and responsive design across all devices.</p>
+                </div>
+                <div class="card">
+                    <h4 class="card-title">AI Integration & Workflow Optimization</h4>
+                    <p style="margin-top: 10px; margin-bottom: 0;">Evaluating and refining AI outputs, implementing prompt engineering strategies, and seamlessly integrating intelligent automation tools into modern web interfaces.</p>
+                </div>
+                <div class="card">
+                    <h4 class="card-title">UI / UX Design</h4>
+                    <p style="margin-top: 10px; margin-bottom: 0;">Conducting user research and creating intuitive, visually compelling designs utilizing Figma. Focusing on modern aesthetics and streamlined user journeys.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h3 class="section-title">Experience</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Front End Developer & UI/UX Designer</h4>
+                        <span class="card-date">Dec 2025 – Mar 2026</span>
+                    </div>
+                    <span class="card-subtitle">Bytes Bizz Technology LLP</span>
+                    <ul>
+                        <li>Designed responsive web and mobile interfaces utilizing modern tools and AI integration.</li>
+                        <li>Improved website performance, accessibility, and page load speed through rigorous code optimization.</li>
+                        <li>Conducted extensive user research, interviews, and usability testing to deeply understand user needs.</li>
+                        <li>Reduced UI bugs consistently through thorough testing and proactive code reviews.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="work">
+            <h3 class="section-title">Selected Work</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">One 7 Art Commune</h4>
+                        <span class="card-date">Freelance</span>
+                    </div>
+                    <p style="margin-top: 10px; margin-bottom: 0;">Developed a custom art-selling e-commerce platform. Focused on creating a visually premium, high-performance storefront tailored for art collectors.</p>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Luxury Mv Magazine</h4>
+                        <span class="card-date">Current Development</span>
+                    </div>
+                    <p style="margin-top: 10px; margin-bottom: 0;">Designing and building a digital magazine platform utilizing modern front-end stacks with an emphasis on typography, fluid layouts, and editorial aesthetics.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h3 class="section-title">Education</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Master Of Computer Applications (MCA)</h4>
+                        <span class="card-date">2024 – 2026</span>
+                    </div>
+                    <span class="card-subtitle">Atmiya University, Rajkot</span>
+                    <p style="margin-top: 0; margin-bottom: 0;">CGPA: 8.39 / 10</p>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Bachelors Of Computer Applications (BCA)</h4>
+                        <span class="card-date">2021 – 2024</span>
+                    </div>
+                    <span class="card-subtitle">Saurashtra University (R.P. Bhalodiya College)</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
